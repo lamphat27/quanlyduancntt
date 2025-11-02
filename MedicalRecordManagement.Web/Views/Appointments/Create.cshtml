@@ -1,0 +1,149 @@
+@model MedicalRecordManagement.Core.Entities.Appointment
+
+@{
+    ViewData["Title"] = "Đặt Lịch hẹn Mới";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>📅 Đặt Lịch hẹn Mới</h2>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Quay lại danh sách
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Thông tin lịch hẹn</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="PatientId" class="form-label">Bệnh nhân</label>
+                                <select asp-for="PatientId" class="form-select" asp-items="ViewBag.PatientId">
+                                    <option value="">-- Chọn bệnh nhân --</option>
+                                </select>
+                                <span asp-validation-for="PatientId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="DoctorId" class="form-label">Bác sĩ</label>
+                                <select asp-for="DoctorId" class="form-select" asp-items="ViewBag.DoctorId">
+                                    <option value="">-- Chọn bác sĩ --</option>
+                                </select>
+                                <span asp-validation-for="DoctorId" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="AppointmentDate" class="form-label">Ngày hẹn</label>
+                                <input asp-for="AppointmentDate" type="date" class="form-control" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="AppointmentTime" class="form-label">Giờ hẹn</label>
+                                <input asp-for="AppointmentTime" type="time" class="form-control" />
+                                <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Reason" class="form-label">Lý do khám</label>
+                        <textarea asp-for="Reason" class="form-control" rows="3" placeholder="Mô tả lý do đặt lịch hẹn..."></textarea>
+                        <span asp-validation-for="Reason" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="ConsultationFee" class="form-label">Phí khám (VNĐ)</label>
+                                <input asp-for="ConsultationFee" type="number" class="form-control" placeholder="0" />
+                                <span asp-validation-for="ConsultationFee" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Trạng thái</label>
+                                <div class="form-control-plaintext">
+                                    <span class="badge bg-warning">Đã đặt</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Notes" class="form-label">Ghi chú</label>
+                        <textarea asp-for="Notes" class="form-control" rows="3" placeholder="Ghi chú thêm về lịch hẹn..."></textarea>
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary me-2">
+                            <i class="fas fa-save"></i> Đặt lịch hẹn
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Hủy
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h6>💡 Lưu ý</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check text-success"></i> Mã lịch hẹn sẽ được tự động tạo</li>
+                    <li><i class="fas fa-check text-success"></i> Lịch hẹn mới sẽ có trạng thái "Đã đặt"</li>
+                    <li><i class="fas fa-check text-success"></i> Thông tin bắt buộc: Bệnh nhân, Bác sĩ, Ngày giờ</li>
+                    <li><i class="fas fa-warning text-warning"></i> Chỉ có thể đặt lịch từ hôm nay trở đi</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h6>⏰ Giờ làm việc</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-clock text-info"></i> Sáng: 08:00 - 12:00</li>
+                    <li><i class="fas fa-clock text-info"></i> Chiều: 13:00 - 17:00</li>
+                    <li><i class="fas fa-clock text-info"></i> Tối: 18:00 - 20:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h6>📞 Liên hệ</h6>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">
+                    Nếu cần hỗ trợ đặt lịch hẹn, vui lòng liên hệ:
+                </p>
+                <p><i class="fas fa-phone"></i> 0123 456 789</p>
+                <p><i class="fas fa-envelope"></i> support@hospital.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

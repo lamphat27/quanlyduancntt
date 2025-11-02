@@ -1,0 +1,17 @@
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalRecordManagement.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalRecordManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalRecordManagement.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalRecordManagement.Infrastructure.AssemblyInfo.cs
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalRecordManagement.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\bin\Debug\net9.0\MedicalRecordManagement.Infrastructure.deps.json
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\bin\Debug\net9.0\MedicalRecordManagement.Infrastructure.runtimeconfig.json
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\bin\Debug\net9.0\MedicalRecordManagement.Infrastructure.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\bin\Debug\net9.0\MedicalRecordManagement.Infrastructure.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\bin\Debug\net9.0\MedicalRecordManagement.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\bin\Debug\net9.0\MedicalRecordManagement.Core.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalR.4B050E6C.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalRecordManagement.Infrastructure.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\refint\MedicalRecordManagement.Infrastructure.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalRecordManagement.Infrastructure.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\MedicalRecordManagement.Infrastructure.genruntimeconfig.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Infrastructure\obj\Debug\net9.0\ref\MedicalRecordManagement.Infrastructure.dll

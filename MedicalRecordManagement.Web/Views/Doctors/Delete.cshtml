@@ -1,0 +1,163 @@
+@model MedicalRecordManagement.Core.Entities.Doctor
+
+@{
+    ViewData["Title"] = "Xóa Bác sĩ";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>👨‍⚕️ Xóa Bác sĩ</h2>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Quay lại danh sách
+    </a>
+</div>
+
+<div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">⚠️ Cảnh báo!</h4>
+    <p>Bạn có chắc chắn muốn xóa bác sĩ này không? Hành động này không thể hoàn tác.</p>
+    <hr>
+    <p class="mb-0">Tất cả dữ liệu liên quan đến bác sĩ này sẽ bị ảnh hưởng.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Thông tin bác sĩ sẽ bị xóa</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Mã bác sĩ:</label>
+                            <p class="form-control-plaintext">
+                                <span class="badge bg-primary fs-6">@Html.DisplayFor(model => model.DoctorCode)</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Họ và tên:</label>
+                            <p class="form-control-plaintext fs-5">@Html.DisplayFor(model => model.FullName)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Chuyên khoa:</label>
+                            <p class="form-control-plaintext">
+                                <span class="badge bg-info fs-6">@Html.DisplayFor(model => model.Specialization)</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Số chứng chỉ hành nghề:</label>
+                            <p class="form-control-plaintext">@Html.DisplayFor(model => model.LicenseNumber)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Số điện thoại:</label>
+                            <p class="form-control-plaintext">@Html.DisplayFor(model => model.PhoneNumber)</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email:</label>
+                            <p class="form-control-plaintext">@Html.DisplayFor(model => model.Email)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Địa chỉ:</label>
+                    <p class="form-control-plaintext">@Html.DisplayFor(model => model.Address)</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Ngày hết hạn chứng chỉ:</label>
+                            <p class="form-control-plaintext">
+                                @if (Model.LicenseExpiryDate.HasValue)
+                                {
+                                    @Model.LicenseExpiryDate.Value.ToString("dd/MM/yyyy")
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Chưa cập nhật</span>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Trạng thái:</label>
+                            <p class="form-control-plaintext">
+                                @if (Model.IsActive)
+                                {
+                                    <span class="badge bg-success fs-6">Hoạt động</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary fs-6">Không hoạt động</span>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Trình độ chuyên môn:</label>
+                    <p class="form-control-plaintext">@Html.DisplayFor(model => model.Qualifications)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h6>⚠️ Tác động khi xóa</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-exclamation-triangle text-warning"></i> Tất cả bệnh án liên quan</li>
+                    <li><i class="fas fa-exclamation-triangle text-warning"></i> Tất cả lịch hẹn liên quan</li>
+                    <li><i class="fas fa-exclamation-triangle text-warning"></i> Thông tin bác sĩ sẽ bị xóa vĩnh viễn</li>
+                    <li><i class="fas fa-exclamation-triangle text-warning"></i> Không thể khôi phục dữ liệu</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h6>💡 Gợi ý</h6>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">
+                    Thay vì xóa, bạn có thể tắt trạng thái hoạt động của bác sĩ để ẩn khỏi danh sách mà vẫn giữ lại dữ liệu.
+                </p>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">
+                    <i class="fas fa-edit"></i> Chỉnh sửa thay vì xóa
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-end mt-4">
+    <form asp-action="Delete" class="me-2">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash"></i> Xác nhận xóa
+        </button>
+    </form>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-times"></i> Hủy
+    </a>
+</div>

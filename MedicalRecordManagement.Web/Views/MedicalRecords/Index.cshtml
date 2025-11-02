@@ -1,0 +1,106 @@
+@model IEnumerable<MedicalRecordManagement.Core.Entities.MedicalRecord>
+
+@{
+    ViewData["Title"] = "Danh sách Bệnh án";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>📋 Danh sách Bệnh án</h2>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Thêm bệnh án mới
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        @if (Model.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Mã BA</th>
+                            <th>Bệnh nhân</th>
+                            <th>Bác sĩ</th>
+                            <th>Ngày khám</th>
+                            <th>Chẩn đoán</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="badge bg-primary">@Html.DisplayFor(modelItem => item.RecordNumber)</span>
+                                </td>
+                                <td>
+                                    <strong>@Html.DisplayFor(modelItem => item.Patient.FullName)</strong>
+                                    <br>
+                                    <small class="text-muted">@Html.DisplayFor(modelItem => item.Patient.PatientCode)</small>
+                                </td>
+                                <td>
+                                    <strong>@Html.DisplayFor(modelItem => item.Doctor.FullName)</strong>
+                                    <br>
+                                    <small class="text-muted">@Html.DisplayFor(modelItem => item.Doctor.Specialization)</small>
+                                </td>
+                                <td>@item.VisitDate.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.Diagnosis))
+                                    {
+                                        <span class="text-truncate d-inline-block" style="max-width: 200px;" title="@item.Diagnosis">
+                                            @item.Diagnosis
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">Chưa chẩn đoán</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Status == "Active")
+                                    {
+                                        <span class="badge bg-success">Hoạt động</span>
+                                    }
+                                    else if (item.Status == "Completed")
+                                    {
+                                        <span class="badge bg-info">Hoàn thành</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">@item.Status</span>
+                                    }
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </a>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning">
+                                            <i class="fas fa-edit"></i> Sửa
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash"></i> Xóa
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-file-medical fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted">Chưa có bệnh án nào</h4>
+                <p class="text-muted">Hãy thêm bệnh án đầu tiên để bắt đầu sử dụng hệ thống.</p>
+                <a asp-action="Create" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Thêm bệnh án đầu tiên
+                </a>
+            </div>
+        }
+    </div>
+</div>

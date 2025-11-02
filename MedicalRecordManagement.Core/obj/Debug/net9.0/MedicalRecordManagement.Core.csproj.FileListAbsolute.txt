@@ -1,0 +1,11 @@
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\obj\Debug\net9.0\MedicalRecordManagement.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\obj\Debug\net9.0\MedicalRecordManagement.Core.AssemblyInfoInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\obj\Debug\net9.0\MedicalRecordManagement.Core.AssemblyInfo.cs
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\obj\Debug\net9.0\MedicalRecordManagement.Core.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\bin\Debug\net9.0\MedicalRecordManagement.Core.deps.json
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\bin\Debug\net9.0\MedicalRecordManagement.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\bin\Debug\net9.0\MedicalRecordManagement.Core.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\obj\Debug\net9.0\MedicalRecordManagement.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\obj\Debug\net9.0\refint\MedicalRecordManagement.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\obj\Debug\net9.0\MedicalRecordManagement.Core.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\MedicalRecordManagement.Core\obj\Debug\net9.0\ref\MedicalRecordManagement.Core.dll

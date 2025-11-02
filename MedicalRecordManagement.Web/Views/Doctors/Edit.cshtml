@@ -1,0 +1,158 @@
+@model MedicalRecordManagement.Core.Entities.Doctor
+
+@{
+    ViewData["Title"] = "Sửa Thông tin Bác sĩ";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>👨‍⚕️ Sửa Thông tin Bác sĩ</h2>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Quay lại danh sách
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Thông tin bác sĩ</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="FirstName" class="form-label">Họ</label>
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="LastName" class="form-label">Tên</label>
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="DoctorCode" class="form-label">Mã bác sĩ</label>
+                                <input asp-for="DoctorCode" class="form-control" readonly />
+                                <span asp-validation-for="DoctorCode" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="Specialization" class="form-label">Chuyên khoa</label>
+                                <select asp-for="Specialization" class="form-select">
+                                    <option value="">-- Chọn chuyên khoa --</option>
+                                    <option value="Tim mạch">Tim mạch</option>
+                                    <option value="Nhi khoa">Nhi khoa</option>
+                                    <option value="Ngoại khoa">Ngoại khoa</option>
+                                    <option value="Nội khoa">Nội khoa</option>
+                                    <option value="Sản phụ khoa">Sản phụ khoa</option>
+                                    <option value="Thần kinh">Thần kinh</option>
+                                    <option value="Da liễu">Da liễu</option>
+                                    <option value="Mắt">Mắt</option>
+                                    <option value="Tai mũi họng">Tai mũi họng</option>
+                                    <option value="Xương khớp">Xương khớp</option>
+                                </select>
+                                <span asp-validation-for="Specialization" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="LicenseNumber" class="form-label">Số chứng chỉ hành nghề</label>
+                                <input asp-for="LicenseNumber" class="form-control" />
+                                <span asp-validation-for="LicenseNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="PhoneNumber" class="form-label">Số điện thoại</label>
+                                <input asp-for="PhoneNumber" class="form-control" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="Email" class="form-label">Email</label>
+                                <input asp-for="Email" type="email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label asp-for="LicenseExpiryDate" class="form-label">Ngày hết hạn chứng chỉ</label>
+                                <input asp-for="LicenseExpiryDate" type="date" class="form-control" />
+                                <span asp-validation-for="LicenseExpiryDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Address" class="form-label">Địa chỉ</label>
+                        <textarea asp-for="Address" class="form-control" rows="2"></textarea>
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Qualifications" class="form-label">Trình độ chuyên môn</label>
+                        <textarea asp-for="Qualifications" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Qualifications" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+                            <label asp-for="IsActive" class="form-check-label">
+                                Hoạt động
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary me-2">
+                            <i class="fas fa-save"></i> Lưu thay đổi
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Hủy
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h6>💡 Lưu ý</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-info text-info"></i> Mã bác sĩ không thể thay đổi</li>
+                    <li><i class="fas fa-check text-success"></i> Thông tin bắt buộc: Họ tên, chuyên khoa</li>
+                    <li><i class="fas fa-check text-success"></i> Email phải đúng định dạng</li>
+                    <li><i class="fas fa-check text-success"></i> Số chứng chỉ phải duy nhất</li>
+                    <li><i class="fas fa-warning text-warning"></i> Tắt trạng thái hoạt động sẽ ẩn bác sĩ khỏi danh sách</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

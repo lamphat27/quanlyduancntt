@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="text-center">
+    <h1 class="display-4">🏥 Chào mừng đến với Hệ thống Quản lý Bệnh án</h1>
+    <p class="lead">Hệ thống quản lý bệnh án hiện đại và hiệu quả cho bệnh viện</p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">👥 Bệnh nhân</h5>
+                <p class="card-text">Quản lý thông tin bệnh nhân</p>
+                <a href="@Url.Action("Index", "Patients")" class="btn btn-primary">Xem danh sách</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">👨‍⚕️ Bác sĩ</h5>
+                <p class="card-text">Quản lý thông tin bác sĩ</p>
+                <a href="@Url.Action("Index", "Doctors")" class="btn btn-primary">Xem danh sách</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">📅 Lịch hẹn</h5>
+                <p class="card-text">Quản lý lịch hẹn khám</p>
+                <a href="@Url.Action("Index", "Appointments")" class="btn btn-primary">Xem danh sách</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">📋 Bệnh án</h5>
+                <p class="card-text">Quản lý hồ sơ bệnh án</p>
+                <a href="@Url.Action("Index", "MedicalRecords")" class="btn btn-primary">Xem danh sách</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>📊 Thống kê nhanh</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <h3 class="text-primary">0</h3>
+                            <p>Tổng số bệnh nhân</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <h3 class="text-success">0</h3>
+                            <p>Tổng số bác sĩ</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <h3 class="text-warning">0</h3>
+                            <p>Lịch hẹn hôm nay</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <h3 class="text-info">0</h3>
+                            <p>Bệnh án trong tháng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
